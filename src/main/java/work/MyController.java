@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MyController {
@@ -23,6 +24,14 @@ public class MyController {
 
         return "hello";
     }
+    @RequestMapping(method = RequestMethod.POST ,path = "/registration")
+    public String addModel(@RequestParam String login,
+                         @RequestParam(name = "user-name")String name)throws Throwable{
+
+        dao.createModel(login, name);
+        return "hello";
+    }
+
     }
 
 

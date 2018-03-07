@@ -5,12 +5,19 @@
   <head>
     <title>Network</title>
   </head>
-  <body>
-  <h1> Hello </h1>
+  <body background = "https://best-wallpaper.net/wallpaper/1366x768/1706/Bridge-lake-grass-sunset_1366x768.jpg" >
+  <h1> Добро пожаловать в Network! </h1>
 
-  <c:forEach items="${requestScope ['bean'].allModel}" var="model">
-    <p>${model.login}(${model.name})</p>
-  </c:forEach>
+    <c:forEach items="${requestScope ['bean'].allModel}" var="model">
+      <p>${model.login}(${model.name})</p>
+    </c:forEach>
+
+  <p>
+      <a href="pages/registration.jsp">Войти</a>
+    </p>
+  <p>
+       <a href="pages/listUsers.jsp">Список пользователей</a>
+  </p>
 
   </body>
 </html>
